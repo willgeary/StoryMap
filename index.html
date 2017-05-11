@@ -1,0 +1,736 @@
+<!-- See: 
+https://github.com/JackDougherty/otl-town-borders
+https://github.com/carlapedret/jewelleryquartermap
+https://github.com/muxlab/map-effects-100 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<style>
+body {
+    margin:0;
+    padding:0;
+}
+#map {
+    position: fixed;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  20px 80px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+section.active {
+    opacity: 1;
+
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+/* Control map popup max-width here */
+.mapboxgl-popup {
+    max-width: 450px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.marker-title {
+    font-weight: 700;
+}
+
+h1{
+  font-size: 26.5px;
+}
+
+p {
+  font-size:14px ;
+
+}
+
+}
+</style>
+
+<div id='map'></div>
+<div id='features'>
+    <section id='Home' class='active'>
+        <h1>Providing critical health care to Malawians</h1>
+
+<center><image src="images/1.png"><center>
+<p><center><b>Scroll down to follow along.</b></center></p>
+<image src="images/Partners_in_Health.png">
+
+<center><a data-flickr-embed="true"  href="https://www.flickr.com/photos/bs0u10e0/6695324879/in/photolist-dFhAsK-zUMK2i-dFo5CG-dFo3AG-dFhFPc-dFuhFJ-dFhAC6-dFo3sJ-dGs26c-dFukj9-dFo3am-b5z47r-nYYp6g-dF6iik-dFqwKu-dF4d7Z-dF2eWB-qGsgyE-dF7DM3-dFqvSC-dGpWAc-dGpXkg-dF5otx-bcDhPR-7kss7P-7kJoxq-dFsH7w-pCupe6-dGpY2M-dFbHVC-dF4FHp-dF1gNc-dGreh9-dGsEfe-dFa58E-dGyFR9-7kwmwQ-qGyYbF-dF7CBC-7kVPDC-nX5Eu1-dFqwYw-7mfRJ5-dFngC4-dFbG2u-7k2zj2-pCqVC2-7kEtPg-dFa7v7-cKx2uw" title="Stormy Times"><img src="https://farm8.staticflickr.com/7174/6695324879_9e9773f0e2_b.jpg" width='550' height='350' alt='Stormy Times'></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></center></script>
+    </section>
+    <section id='Ch1'>
+        <h3>Why to live in the Jewellery Quarter</h3>
+        <center><image src="http://www.carlapedret.cat/wp-content/uploads/2016/04/Carrer-1-e1461285069443.png"></center>
+        <p><b>David Smith</b> and <b>Matthew Bott</b> are two of the 7,000 residents of the Jewellery Quarter.  David, a town planner, is originally from Corby, in Northamptonshire. He arrived at the Jewellery Quarter ten years ago and now lives here with his family. Matthew is from Birmingham and works as a city design manager for a construction company. He has lived in the Jewellery Quarter since 2007. </p>
+
+<p>We meet at the <b>Bryant Priest Newman architects</b>, a modern black building on Mary street. The meeting room is all in white with a minimalist style.</p>
+
+<p>I ask Matthew and David why they chose to live in this neighbourhood. The historic background and not to depend on a car are Matthew’s main reason. David says the area has also something different and special that makes you be part of it.</p>
+
+<p><center><b>Click on the markers on the map to listen to Matthew and David</b><center></p>
+
+    </section>
+    <section id='Ch2'>
+        <h3>Night clubs and factories</h3>
+        <a data-flickr-embed="true"  href="https://www.flickr.com/photos/ell-r-brown/6777450893/in/photolist-bjUd2B-q6qSiT-qxZMgP-dTD98a-ik12mx-s9m5KF-aa3yZq-a9ZL7z-qQhBSk-a7N93z-dQkgXK-a7Nac6-gd5i8w-f1oiEN-7jRpb9-bjVSs2-dQqSZh-gd5XFx-8ZipH-f1oizh-7GHW2v-bjVUDM-gd5g7Z-dQkiun-gd8Cx6-ik1tDw-a7R4Wo-bjUPTc-a7R3nN-a7N9C4-ik1fFj-CWKXpW-vKbcpZ-a8dkay-s3mCRz-qw6hoM-a7Nh1t-a7Rn2f-6R6tZa-qYfwxt-cDwbr-bDxGVx-6Raw4A-bjVQ2p-dTDa2i-eccQM8-a7R4eu-q34i3v-a728Dq-8YkWUU" title="Subway City - Livery Street, Birmingham"><img src="https://farm8.staticflickr.com/7007/6777450893_72fc99c317.jpg" width="500" height="375" alt="Subway City - Livery Street, Birmingham"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<p>The transformation of the Jewellery Quarter started some years ago. Back in the 1980s, once the jewellers had closed their workshops at 6 o’clock, the streets were deserted, says <b>Christine Cushing</b>, who worked in the Jewellery Quarter for almost 35 years.</p>
+
+<p>In the 1990s, the factories – some had closed forever – alternated with dark streets and some nightclubs. Beyond <b>St Paul’s Square</b> and the <b>Rose Tavern</b>, there wasn’t any activity. </p>
+
+<p>The industrial past of the area has adapted to the changing times and some old factories have now started a second life. One of the most emblematic is <b>Newman Brothers</b>, today known as Coffin Works. During 100 years a coffin-fittings factory, Newman Brothers is now a museum where the machinery share the space with workshops of artists and a yoga studio. </p>
+
+<p><center><b>Click on the markers on the map to know more about the past of the Jewellery Quarter.</b><center></p>
+        </section>
+    </section>
+    <section id='Ch3'>
+        <h3>Who lives and works in the Jewellery Quarter?</h3>
+        <image src="http://www.carlapedret.cat/wp-content/uploads/2016/04/Screen-Shot-2016-04-22-at-01.50.00-e1461286261419.png">
+        <p>Little by little the Jewellery Quarter has been opening up to the city. The jewellers are not alone anymore: architects, designers and media companies are the new kids on the block. </p>
+
+<p>And with the change, the first residents arrived. According to a 2010 survey, 44% of the residents lived and worked in the area and more than half of them had an annual gross household income above the national average, i.e. more than £40,000 a year. More than 70% were less than 34 years old. </p>
+
+<p>These young professionals are bringing to the JQ new businesses, coffee shops, hotels and restaurants, but is there a lack of diversity?</p>
+
+<p>Matthew and David, who have lived here for a long time, recognise the neighbourhood is homogeneous in terms of social standing but not in terms of different cultures or ethnicities. </p>
+
+<p><center><b>Click on the marker to know more about the population of the Jewellery Quarter</b><center>.</p>
+
+    </section>
+    <section id='Ch4'>
+        <h3>Dereliction, the big enemy of the neighbourhood</h3>
+        <center><image src="http://www.carlapedret.cat/wp-content/uploads/2016/04/Screen-Shot-2016-04-22-at-01.39.28-e1461285684395.png"></center>
+        <p>The Jewellery Quarter Neighbourhood Plan (JQNP), which has to spread the seed for a thriving future, has numerous challenges. One of the most urgent is to fight dereliction. </p>
+
+<p>You only need to walk 10 minutes through the Jewellery Quarter to find vacant lots or abandoned factories with a “for sale” board. One of the best examples of dereliction in the area is <b>Great Hampton Street</b>, where buildings that were nice in other times alternate with mobile phone shops and failed businesses. </p>
+
+<p>The neighbours want the City Council to sanction irresponsible landlords that wait and wait to sell their properties while some of the buildings are falling down. “It is not the most common situation” says Matthew Bott. The main problem to fight dereliction is the high cost of building restoration. To solve it, the neighbourhood plan looks for solutions to make investment more attractive. </p>
+
+<p>But new constructions are also a problem. According to David Smith, some new developments leave much to be desired in terms of quality and design. For this reason, the neighbours claim a more active role and don’t want to leave all the control of the investments in the hands of the City Council. </p>
+<p><center><b>Click on the marker to know about the singularity of Great Hampton street </b><center>.</p>
+
+    </section>
+    <section id='Ch5'>
+        <h3>The better the neighbourhood, the higher the prices</h3>
+        <center><image src="http://www.carlapedret.cat/wp-content/uploads/2016/04/Screen-Shot-2016-04-22-at-01.45.49-e1461286003925.png"></center>
+        <p>No one denies that if the Neighbourhood plan works, it will have an impact on property prices. The raise in residential prices is already a fact and the average value is higher than what many people in Birmingham can afford. </p>
+
+<p>However, the pressure seems to be stronger for businesses. The entry of the creative industries has created a competition for space. This “gentrification” of the Jewellery Quarter industry - as David calls it - seems to be unavoidable. </p>
+
+<p>The JQNP seeks to find a balance between new and traditional businesses, but some of them will inevitably have to modernise. That is not only because the price of the rents will increase, but also because they have to adapt to what consumers and the markets want. </p>
+<p><center><b>Click on the marker to know more about the possible effects of the neighbourhood plan</b><center>.</p>
+
+    </section>
+    <section id='Ch6'>
+        <h3>The Jewellery Quarter of the future</h3>
+        <p>¿How do you imagine the JQ in ten years? David and Matthew think about the question in silence. The word “thriving” is one of the first to come out.</p>
+
+<p>David imagines a neighbourhood with more friendly for families and children, with schools and green spaces. Matthew wishes that the Jewellery Quarter will be known not only for the quality of its jewels, but also for being the best place to live in Birmingham.</p>
+
+    </section>
+    <section> </section>
+
+    <section id='Ch7'>
+        <h3>The Jewellery Quarter of the future</h3>
+        <p>¿How do you imagine the JQ in ten years? David and Matthew think about the question in silence. The word “thriving” is one of the first to come out.</p>
+
+<p>David imagines a neighbourhood with more friendly for families and children, with schools and green spaces. Matthew wishes that the Jewellery Quarter will be known not only for the quality of its jewels, but also for being the best place to live in Birmingham.</p>
+
+    </section>
+    <section> </section>
+
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoid2lsbGdlYXJ5IiwiYSI6ImNpdW9wcmkxNjAxbDUydXQ0MzFwdmdvOWkifQ.9YIdQhYTOpRpocyFK-tBNA';
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/willgeary/cj2jmto4x00002spf1dvfskg0',
+    center: [33.033335, -11.313316],
+    zoom: 3.42,
+    bearing: -0.97,
+    pitch: 41.50
+});
+
+
+
+var markers = {
+    "type": "FeatureCollection",
+    "features": [
+    {
+        "type": "Feature",
+        "properties": {
+            "title": "Matthew why",
+            "description": "<div class='marker-title'>A central location and an historic flavour</div> \
+            <p>Matthew Bott is from Birmingham and lives in the Jewellery Quarter since 2007. The privilege to walk to his work place and the special character of the area are his reason to live in the neighbourhood. (Image: Flickr/Roland Turner).</p> \
+            <iframe width='100%' height='275' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/259889010&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>",
+            "marker-symbol": "marker",
+
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [33.033335, -11.313316]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "title": "David why",
+            "description": "<div class='marker-title'>A place you cannot get away from</div> \
+            <iframe width='100%' height='275' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/259900596&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>",
+          "marker-symbol": "marker"
+
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-1.907965, 52.486672]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "title": "The neighbourhood 35 years ago",
+            "description": "<div class='marker-title'>The neighbourhood 35 years ago</div> \
+            <p>Christine Cushing worked in the Jewellery Quarter for 35 years. She remembers how the neighbourhood has changed from an industrial area to a vibrant place to live, work and walk around.</p> \
+            <iframe width='100%' height='275' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/259976604&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe> ",
+            "marker-symbol": "marker"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-1.903168, 52.483828]
+        }
+},
+{
+"type": "Feature",
+"properties": {
+"title": "Coffin works",
+"description": "<div class='marker-title'>Newman Brothers, the last coffin fitting factory</div> \
+<p>Listen to Sarah Hayes, exhibitions Manager for the Coffin Works, to know how a victorian factory worked.</p> \
+<iframe width='100%' height='275' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/259196377&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>",
+"marker-symbol": "marker"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-1.906006, 52.482903]
+}
+},
+{
+"type": "Feature",
+"properties": {
+  "title": "Homogeneo",
+  "description": "<div class='marker-title'>How are the people who live in the Jewellery Quarter?</div> \
+<p>Matthew Bott,resident in the area, tells his thoughts about the diversity of the neighbourhood.</p> \
+  <iframe width='100%' height='275' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/259911088&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>",
+  "marker-symbol": "marker"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-1.911251, 52.487314]
+}
+},
+{
+"type": "Feature",
+"properties": {
+  "title": "Great Hampton",
+  "description": "<div class='marker-title'>The consequences of dereliction</div> \
+  <p>David Smith, town planner and Jeweller Quarter resident, talks about Great Hampton street main problems and the difficulties to make the street prosperous.</p> \
+  <iframe width='100%' height='275' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/259909423&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>",
+  "marker-symbol": "marker"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-1.909818, 52.490520]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"title": "New flats",
+"description": "<div class='marker-title'>New flats for new residents</div> \
+<p>What would be the effects of the neighbourhood plan?</p> \
+<iframe width='100%' height='450' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/259912999&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>",
+"marker-symbol": "marker"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-1.906900, 52.485730]
+}
+}]
+};
+
+map.on('style.load', function () {
+    map.addSource('malawi', {
+        'type': 'geojson',
+        'data': {
+            'type': 'Feature',
+            'properties': {
+                'name': 'Malawi',
+            },
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [[
+                [
+              35.244140625,
+              -17.14079039331664
+            ],
+            [
+              35.26611328125,
+              -16.97274101999901
+            ],
+            [
+              35.244140625,
+              -16.720385051693988
+            ],
+            [
+              35.15625,
+              -16.59408141271846
+            ],
+            [
+              35.26611328125,
+              -16.34122561920748
+            ],
+            [
+              35.39794921875,
+              -16.13026201203474
+            ],
+            [
+              35.595703125,
+              -16.109153239219467
+            ],
+            [
+              35.79345703125,
+              -16.04581345375217
+            ],
+            [
+              35.88134765625,
+              -15.538375926292048
+            ],
+            [
+              35.859375,
+              -15.156973713377667
+            ],
+            [
+              35.88134765625,
+              -14.817370620155254
+            ],
+            [
+              35.74951171875,
+              -14.562317701914843
+            ],
+            [
+              35.52978515624999,
+              -14.264383087562637
+            ],
+            [
+              35.33203125,
+              -13.987376214146455
+            ],
+            [
+              35.1123046875,
+              -13.774066408054814
+            ],
+            [
+              34.892578125,
+              -13.667338259654947
+            ],
+            [
+              34.80468749999999,
+              -13.47510594433495
+            ],
+            [
+              34.80468749999999,
+              -13.282718960896405
+            ],
+            [
+              34.80468749999999,
+              -13.025965926333539
+            ],
+            [
+              34.73876953125,
+              -12.704650508287893
+            ],
+            [
+              34.69482421875,
+              -12.46876014482322
+            ],
+            [
+              34.6728515625,
+              -12.232654837013472
+            ],
+            [
+              34.91455078125,
+              -11.953349393643416
+            ],
+            [
+              34.91455078125,
+              -11.501556900932487
+            ],
+            [
+              34.7607421875,
+              -11.24306204194776
+            ],
+            [
+              34.62890625,
+              -11.005904459659451
+            ],
+            [
+              34.60693359375,
+              -10.42298838833823
+            ],
+            [
+              34.4970703125,
+              -9.99049080307028
+            ],
+            [
+              34.25537109375,
+              -9.64407696490791
+            ],
+            [
+              33.9697265625,
+              -9.492408153765531
+            ],
+            [
+              33.94775390625,
+              -9.64407696490791
+            ],
+            [
+              33.7939453125,
+              -9.600749932246847
+            ],
+            [
+              33.57421875,
+              -9.600749932246847
+            ],
+            [
+              33.42041015625,
+              -9.40571004160001
+            ],
+            [
+              33.20068359375,
+              -9.40571004160001
+            ],
+            [
+              32.98095703125,
+              -9.362352822055593
+            ],
+            [
+              33.0029296875,
+              -9.557417356841295
+            ],
+            [
+              33.1787109375,
+              -9.64407696490791
+            ],
+            [
+              33.310546875,
+              -9.81732918706777
+            ],
+            [
+              33.35449218749999,
+              -10.055402736564224
+            ],
+            [
+              33.486328125,
+              -10.206813072484595
+            ],
+            [
+              33.64013671875,
+              -10.531020008464976
+            ],
+            [
+              33.486328125,
+              -10.746969318459989
+            ],
+            [
+              33.310546875,
+              -10.876464994816283
+            ],
+            [
+              33.28857421875,
+              -11.156845275211767
+            ],
+            [
+              33.28857421875,
+              -11.39387923296741
+            ],
+            [
+              33.37646484375,
+              -11.781325296112277
+            ],
+            [
+              33.310546875,
+              -12.082295837363578
+            ],
+            [
+              33.310546875,
+              -12.232654837013472
+            ],
+            [
+              33.5302734375,
+              -12.361465967347359
+            ],
+            [
+              33.2666015625,
+              -12.554563528593656
+            ],
+            [
+              33.046875,
+              -12.597454504832005
+            ],
+            [
+              32.958984375,
+              -12.768946439455943
+            ],
+            [
+              33.0029296875,
+              -13.068776734357694
+            ],
+            [
+              32.84912109375,
+              -13.389619591747595
+            ],
+            [
+              32.67333984375,
+              -13.581920900545844
+            ],
+            [
+              32.76123046875,
+              -13.7313809749427
+            ],
+            [
+              32.87109375,
+              -13.85941386907402
+            ],
+            [
+              33.134765625,
+              -14.115267411122709
+            ],
+            [
+              33.35449218749999,
+              -14.221788628397585
+            ],
+            [
+              33.55224609375,
+              -14.434680215297268
+            ],
+            [
+              33.72802734375,
+              -14.541049898060388
+            ],
+            [
+              33.94775390625,
+              -14.477234210156507
+            ],
+            [
+              34.34326171875,
+              -14.392118083661728
+            ],
+            [
+              34.4970703125,
+              -14.477234210156507
+            ],
+            [
+              34.5849609375,
+              -14.79612760362704
+            ],
+            [
+              34.5849609375,
+              -15.114552871944102
+            ],
+            [
+              34.453125,
+              -15.411319377980993
+            ],
+            [
+              34.365234375,
+              -15.728813770533966
+            ],
+            [
+              34.27734375,
+              -15.940202412387029
+            ],
+            [
+              34.43115234375,
+              -16.235772090429844
+            ],
+            [
+              34.78271484375,
+              -16.615137799987075
+            ],
+            [
+              35.1123046875,
+              -16.84660510639629
+            ],
+            [
+              35.09033203125,
+              -17.09879223767869
+            ],
+            [
+              35.244140625,
+              -17.14079039331664
+            ]
+                ]]
+            },
+        }
+    });
+
+    map.addLayer({
+        'id': 'route',
+        'type': 'fill',
+        'source': 'malawi',
+        'layout': {},
+        'paint': {
+            'fill-color': '#FFC0CB',
+            'fill-opacity': 0.5
+        }
+    });
+});
+
+map.on('style.load', function () {
+    // Add marker data as a new GeoJSON source.
+    map.addSource("markers", {
+        "type": "geojson",
+        "data": markers
+    });
+
+    // Add a layer showing the markers.
+    map.addLayer({
+        "id": "markers",
+        "type": "symbol",
+        "source": "markers",
+        "layout": {
+            "icon-image": "{marker-symbol}-15",
+            "icon-allow-overlap": true
+        }
+    });
+});
+
+// When a click event occurs near a marker icon, open a popup at the location of
+// the feature, with description HTML from its properties.
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
+
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    var popup = new mapboxgl.Popup()
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(feature.properties.description)
+        .addTo(map);
+});
+
+// Use the same approach as above to indicate that the symbols are clickable
+// by changing the cursor style to 'pointer'.
+map.on('mousemove', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+});
+
+var chapters = {
+    'Ch1': {
+        bearing: -0.97,
+        center: [33.033335, -11.313316],
+        zoom: 3.42,
+        pitch: 41.50
+    },
+    'Ch2': {
+        speed: 0.5,
+        center: [34.888122, -13.205217],
+        bearing: -14.57,
+        zoom: 5.95,
+        pitch: 28.50
+    },
+    'Ch3': {
+        speed: 0.5,
+        center: [35.009674, -15.769281],
+        bearing: -0.31,
+        zoom: 11.53,
+        pitch: 60.00
+    },
+    'Ch4': {
+        speed: 0.5,
+        center: [35.033549,-15.508885],
+        bearing: -0.31,
+        zoom: 11.53,
+        pitch: 60.00
+    },
+    'Ch5': {
+        bearing: -27.99,
+        center: [34.905336, -15.376131],
+        zoom: 13.2,
+        pitch: 60.00,
+        speed: 0.5
+    },
+    'Ch6': {
+        bearing: -7.19,
+        center: [34.690951, -14.514579],
+        zoom: 11.78,
+        pitch:60.00,
+        speed: 0.5
+    },
+    'Ch7': {
+        bearing: 8.65,
+        center: [34.455211, -13.761288],
+        zoom: 12.64,
+        pitch: 60
+    }
+};
+
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+    map.removeLayer(malawi)
+};
+
+var activeChapterName = 'Ch1';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+</script>
+</body>
+</html>
